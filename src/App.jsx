@@ -10,9 +10,8 @@ function App() {
     <FileSystemProvider>
       <Router>
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/app" element={<AppPage />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route index element={<HomePage />} />
+          <Route path="app" element={<AppPage />} />
         </Routes>
       </Router>
     </FileSystemProvider>
