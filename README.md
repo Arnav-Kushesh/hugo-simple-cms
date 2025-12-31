@@ -25,6 +25,28 @@ A simple, browser-based content management system for Hugo static sites. Edit an
 npm install
 ```
 
+## Development
+
+The project is built with React and Vite. For development:
+
+```bash
+# Start the backend server
+npm start
+
+# In another terminal, start the Vite dev server
+npm run dev:client
+```
+
+Then open `http://localhost:3001` in your browser.
+
+## Building for Production
+
+```bash
+npm run build
+```
+
+This will build the React app into the `public` directory, which the Express server will serve.
+
 ## Usage
 
 1. Start the server:
