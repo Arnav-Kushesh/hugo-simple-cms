@@ -5,4 +5,5 @@ npm-debug.log
 *.log
 dist/
 build/
+public/
 .vite/

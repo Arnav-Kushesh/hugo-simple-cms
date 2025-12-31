@@ -1,25 +1,25 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [
     react({
-      jsxImportSource: '@emotion/react',
+      jsxImportSource: "@emotion/react",
       babel: {
-        plugins: ['@emotion/babel-plugin'],
+        plugins: ["@emotion/babel-plugin"],
       },
     }),
   ],
-  root: 'src',
+  root: "src",
   build: {
-    outDir: '../public',
+    outDir: "../build",
     emptyOutDir: true,
   },
   server: {
     port: 3000,
-    open: true
+    open: true,
   },
   preview: {
-    port: 3000
-  }
+    port: 3000,
+  },
 });
