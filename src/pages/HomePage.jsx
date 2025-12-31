@@ -49,7 +49,7 @@ function HomePage() {
           <div className="features-section">
             <div className="feature-card">
               <div className="feature-icon">
-                <FiFolder size={40} />
+                <FiFolder size={25} />
               </div>
               <h3>Zero Configuration</h3>
               <p>
@@ -59,7 +59,7 @@ function HomePage() {
             </div>
             <div className="feature-card">
               <div className="feature-icon">
-                <FiEdit3 size={40} />
+                <FiEdit3 size={25} />
               </div>
               <h3>Edit in Browser</h3>
               <p>
@@ -69,7 +69,7 @@ function HomePage() {
             </div>
             <div className="feature-card">
               <div className="feature-icon">
-                <FiImage size={40} />
+                <FiImage size={25} />
               </div>
               <h3>Media Management</h3>
               <p>
@@ -79,7 +79,7 @@ function HomePage() {
             </div>
             <div className="feature-card">
               <div className="feature-icon">
-                <FiEye size={40} />
+                <FiEye size={25} />
               </div>
               <h3>Live Preview</h3>
               <p>

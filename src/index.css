@@ -128,7 +128,7 @@ body {
 .features-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 24px;
+  gap: 13px;
   margin-bottom: 60px;
   animation: fadeInUp 0.8s ease-out 0.2s both;
 }
@@ -138,8 +138,8 @@ body {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 32px 24px;
+  border-radius: 10px;
+  padding: 30px 25px;
   transition: all 0.3s ease;
   text-align: left;
 }
@@ -154,15 +154,15 @@ body {
 .feature-icon {
   margin-bottom: 16px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center; */
+  /* justify-content: center; */
   color: var(--accent);
 }
 
 .feature-card h3 {
-  font-size: 20px;
+  font-size: 14px;
   font-weight: 600;
-  margin-bottom: 12px;
+  margin-bottom: 5px;
   color: var(--text-primary);
 }
 
@@ -170,6 +170,8 @@ body {
   font-size: 15px;
   color: var(--text-secondary);
   line-height: 1.6;
+  margin: 0;
+  padding: 0;
 }
 
 .cta-section {
