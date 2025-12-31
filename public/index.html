@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugo Simple CMS</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📝 Hugo Simple CMS</h1>
+            <div class="header-controls">
+                <div class="folder-selector">
+                    <button id="selectFolderBtn" class="btn-primary">📁 Select Hugo Folder</button>
+                </div>
+                <div class="server-url-input">
+                    <label for="hugoServerUrl">Hugo Server URL:</label>
+                    <input type="text" id="hugoServerUrl" placeholder="http://localhost:1313" value="http://localhost:1313" />
+                </div>
+            </div>
+            <div id="currentFolder" class="current-folder"></div>
+        </header>
+
+        <div class="main-content">
+            <aside class="sidebar">
+                <div class="sidebar-tabs">
+                    <button class="sidebar-tab active" data-sidebar-tab="posts">📝 Posts</button>
+                    <button class="sidebar-tab" data-sidebar-tab="media">🖼️ Media</button>
+                </div>
+                
+                <div class="sidebar-content" id="postsSidebar">
+                    <div class="sidebar-header">
+                        <h2>Blog Posts</h2>
+                        <button id="newPostBtn" class="btn-primary">+ New Post</button>
+                    </div>
+                    <div id="postsList" class="posts-list">
+                        <p class="empty-state">Set a Hugo folder to see posts</p>
+                    </div>
+                </div>
+                
+                <div class="sidebar-content" id="mediaSidebar" style="display: none;">
+                    <div class="sidebar-header">
+                        <h2>Media Library</h2>
+                        <button id="refreshMediaBtn" class="btn-primary" title="Refresh">🔄</button>
+                    </div>
+                    <div id="mediaList" class="media-list">
+                        <p class="empty-state">Set a Hugo folder to see media</p>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="editor-area">
+                <div id="editorContainer" class="editor-container">
+                    <div class="empty-editor">
+                        <p>Select a post to edit or create a new one</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- New Post Modal -->
+    <div id="newPostModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Create New Post</h2>
+            <form id="newPostForm">
+                <div class="form-group">
+                    <label for="newPostFilename">Filename (e.g., my-new-post.md):</label>
+                    <input type="text" id="newPostFilename" required placeholder="my-new-post.md" />
+                </div>
+                <div class="form-group">
+                    <label for="newPostTitle">Title:</label>
+                    <input type="text" id="newPostTitle" required placeholder="My New Post" />
+                </div>
+                <div class="form-group">
+                    <label for="newPostDate">Date:</label>
+                    <input type="datetime-local" id="newPostDate" />
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="newPostDraft" />
+                        Draft
+                    </label>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" id="cancelNewPost">Cancel</button>
+                    <button type="submit" class="btn-primary">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
