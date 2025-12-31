@@ -49,21 +49,35 @@ This will build the React app into the `public` directory, which the Express ser
 
 ## Usage
 
-1. Start the server:
+### Development Mode
+
+1. Start the development server:
 
 ```bash
-npm start
+npm run dev
 ```
 
-2. Open your browser (Chrome, Edge, or another Chromium-based browser) and navigate to:
-
-```
-http://localhost:3000
-```
+2. The app will automatically open in your browser at `http://localhost:3000`
 
 3. Click the "Select Hugo Folder" button and choose your Hugo site root folder (the folder containing the `content` directory)
 
 4. Start editing your blog posts!
+
+### Production Mode
+
+1. Build the app:
+
+```bash
+npm run build
+```
+
+2. Preview the production build:
+
+```bash
+npm run serve
+```
+
+Or use any static file server to serve the `public` directory.
 
 **Note**: The File System Access API is currently only supported in Chromium-based browsers (Chrome, Edge, etc.). The app will show a warning if your browser doesn't support it.
 
@@ -99,12 +113,13 @@ The CMS uses Chrome's File System Access API to:
 - Read files directly from the selected directory
 - Write changes back to files using `FileSystemWritableFileStream`
 - Maintain file handles for efficient file operations
+- Persist directory handles using IndexedDB for access across page refreshes
 
-The backend server only serves the static files. All file operations happen in the browser using the File System Access API.
+**No backend server is required!** All file operations happen entirely in the browser using the File System Access API. The app is a pure client-side application.
 
 ## Security Note
 
-This CMS is designed for local development use. The File System Access API requires explicit user permission for each folder selection, providing a secure way to access local files. The server only serves static files and does not handle file operations.
+This CMS is designed for local development use. The File System Access API requires explicit user permission for each folder selection, providing a secure way to access local files. All operations are performed client-side - no data is sent to any server.
 
 ## License
 
